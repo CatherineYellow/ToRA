@@ -1,6 +1,7 @@
 set -ex
 
-MODEL_NAME_OR_PATH="/data/vayu/train/models/xDAN-L1-Qwen25-7B-Instruct"
+# MODEL_NAME_OR_PATH="/data/vayu/train/models/xDAN-L1-Qwen25-7B-Instruct"
+MODEL_NAME_OR_PATH="llm-agents/tora-7b-v1.0"
 # MODEL_NAME_OR_PATH="llm-agents/tora-70b-v1.0"
 
 # DATA_LIST = ['math', 'gsm8k', 'gsm-hard', 'svamp', 'tabmwp', 'asdiv', 'mawps']

@@ -1,0 +1,9 @@
+Num samples: 5000
+Num scores: 5000
+Timeout samples: 0
+Empty samples: 9
+Mean score: [38.1]
+Type scores: {'Algebra': 55.2, 'Counting & Probability': 30.4, 'Geometry': 30.7, 'Intermediate Algebra': 19.3, 'Number Theory': 28.3, 'Prealgebra': 57.2, 'Precalculus': 24.5}
+
+Time use: 1075.07s
+Time use: 17:55

@@ -7,7 +7,7 @@ MODEL_NAME_OR_PATH="/data/vayu/train/models/ckpts/ToRL/rl.grpo_qwen.base_7b_torl
 
 # DATA_LIST = ['math', 'gsm8k', 'gsm-hard', 'svamp', 'tabmwp', 'asdiv', 'mawps']
 
-DATA_NAME="math"
+DATA_NAME="AIME_2024"
 # DATA_NAME="gsm8k"
 
 SPLIT="test"

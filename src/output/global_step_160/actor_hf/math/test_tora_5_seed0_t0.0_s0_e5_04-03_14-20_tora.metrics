@@ -1,0 +1,9 @@
+Num samples: 5
+Num scores: 5
+Timeout samples: 0
+Empty samples: 0
+Mean score: [100.0]
+Type scores: {'Algebra': 100.0, 'Geometry': 100.0, 'Number Theory': 100.0, 'Prealgebra': 100.0}
+
+Time use: 14.27s
+Time use: 0:14

@@ -33,7 +33,7 @@ def parse_args():
     parser.add_argument("--temperature", default=0, type=float)
     parser.add_argument("--n_sampling", default=1, type=int)
     parser.add_argument("--top_p", default=1, type=float)
-    parser.add_argument("--max_tokens_per_call", default=1024, type=int)
+    parser.add_argument("--max_tokens_per_call", default=16000, type=int)
     parser.add_argument("--shuffle", action="store_true")
     parser.add_argument("--use_train_prompt_format", action="store_true")
     args = parser.parse_args()

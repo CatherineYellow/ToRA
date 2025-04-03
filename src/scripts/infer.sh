@@ -2,10 +2,10 @@
 set -ex
 
 # 模型检查点列表
-MODEL_STEPS=("global_step_300" "global_step_400")
+MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
 
 # max_tokens_per_call 选择
-MAX_TOKENS=(1024 2048)
+MAX_TOKENS=(1024 2048 4096 8192 16384)
 
 # 数据集配置
 DATA_NAME="AIME_2024"

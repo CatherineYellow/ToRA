@@ -270,6 +270,8 @@ def parse_ground_truth(example: Dict[str, Any], data_name):
         gt_cot, gt_ans = None, example['target']
     elif data_name == "AIME_2024":
         gt_cot, gt_ans = example['solution'], example['answer']
+    elif data_name == "AIME_2025":
+        gt_cot, gt_ans = None, example['answer']
     else:
         raise NotImplementedError(data_name)
     # post process

@@ -54,7 +54,8 @@ def load_prompt(data_name, prompt_type):
         data_name = "math"
     if prompt_type in ['platypus_fs', 'wizard_zs']:
         prompt_type = "cot"
-    prompt_path = "./prompts/{}/{}.md".format(prompt_type, data_name)
+    # prompt_path = "./prompts/{}/{}.md".format(prompt_type, data_name)
+    prompt_path = "./prompts/{}/math_sample.md".format(prompt_type)
     if not os.path.exists(prompt_path):
         prompt_path = "./prompts/{}.md".format(prompt_type)
     if os.path.exists(prompt_path):

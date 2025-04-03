@@ -20,6 +20,7 @@ python -um infer.inference \
 --model_name_or_path ${MODEL_NAME_OR_PATH} \
 --data_name ${DATA_NAME} \
 --split ${SPLIT} \
+--max_tokens_per_call 16000 \
 --prompt_type ${PROMPT_TYPE} \
 --use_train_prompt_format \
 --num_test_sample ${NUM_TEST_SAMPLE} \

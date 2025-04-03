@@ -68,17 +68,17 @@ def prepare_data(args):
     os.makedirs(f'{args.output_dir}/{model_name}/{args.data_name}', exist_ok=True)
 
     # load all processed samples
-    processed_files = [f for f in os.listdir(f"{args.output_dir}/{model_name}/{args.data_name}/") if f.endswith(".jsonl") and f.startswith(out_file_prefix)]    
-    processed_samples = []
-    for f in processed_files:
-        processed_samples.extend(list(load_jsonl(f"{args.output_dir}/{model_name}/{args.data_name}/{f}")))
+    # processed_files = [f for f in os.listdir(f"{args.output_dir}/{model_name}/{args.data_name}/") if f.endswith(".jsonl") and f.startswith(out_file_prefix)]    
+    # processed_samples = []
+    # for f in processed_files:
+    #     processed_samples.extend(list(load_jsonl(f"{args.output_dir}/{model_name}/{args.data_name}/{f}")))
 
-    # dedepulicate
-    processed_samples = {sample['idx']: sample for sample in processed_samples}
-    processed_idxs = list(processed_samples.keys())
-    processed_samples = list(processed_samples.values())
-    total_examples = len(examples)
-    examples = [example for example in examples if example['idx'] not in processed_idxs]
+    # # dedepulicate
+    # processed_samples = {sample['idx']: sample for sample in processed_samples}
+    # processed_idxs = list(processed_samples.keys())
+    # processed_samples = list(processed_samples.values())
+    # total_examples = len(examples)
+    # examples = [example for example in examples if example['idx'] not in processed_idxs]
     print(f"Idx {args.start} - {args.end}: Remain {len(examples)}/{total_examples} samples.")
     if len(examples) == 0:
         pass

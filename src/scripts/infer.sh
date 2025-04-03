@@ -2,8 +2,8 @@
 set -ex
 
 # 模型检查点列表
-MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
-
+#MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
+MODEL_STEPS=("global_step_160/actor_hf")
 # max_tokens_per_call 选择
 MAX_TOKENS=(1024 2048 4096 8192 16384)
 
@@ -15,8 +15,10 @@ NUM_TEST_SAMPLE=-1
 
 # 输出 CSV 文件
 OUTPUT_FILE="aime2024_test.csv"
-echo "model, max_tokens, mean_score" > ${OUTPUT_FILE}  # 先写入表头
-
+#echo "model, max_tokens, mean_score" > ${OUTPUT_FILE}  # 先写入表头
+if [ ! -f ${OUTPUT_FILE} ]; then
+    echo "model, max_tokens, mean_score" > ${OUTPUT_FILE}  # 先写入表头
+fi
 # 运行实验
 for MODEL_STEP in "${MODEL_STEPS[@]}"; do
     MODEL_NAME_OR_PATH="/data/vayu/train/models/ckpts/ToRL/rl.grpo_qwen.base_7b_torl_data_numcall1/${MODEL_STEP}"

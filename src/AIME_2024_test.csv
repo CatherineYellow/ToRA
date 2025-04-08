@@ -1,1 +1,8 @@
 model, max_tokens, mean_score
+xDAN-R2-Thinking-0401, 1024, 0.0
+xDAN-R2-Thinking-0401, 2048, 10.0
+xDAN-R2-Thinking-0401, 4096, 33.3
+xDAN-R2-Thinking-0401, 8192, 46.7
+xDAN-R2-Thinking-0401, 16384, 73.3
+xDAN-R2-Thinking-0401, 32768, 70.0
+xDAN-R2-Thinking-0401, 65536, 70.0

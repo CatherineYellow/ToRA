@@ -5,10 +5,10 @@ set -ex
 # MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
 MODEL_STEPS=("xDAN-R2-Thinking-0401")
 # max_tokens_per_call 选择
-MAX_TOKENS=(8192 16384)
-
+#MAX_TOKENS=(1024 2048 4096 8192 16384)
+MAX_TOKENS=(32768 65536)
 # 数据集配置
-DATA_NAME="math500"
+DATA_NAME="AIME_2024"
 SPLIT="test"
 PROMPT_TYPE="tora"
 NUM_TEST_SAMPLE=-1

@@ -8,7 +8,7 @@ MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_
 MAX_TOKENS=(1024 2048 4096 8192 16384)
 
 # 数据集配置
-DATA_NAME="AIME_2024"
+DATA_NAME="math500"
 SPLIT="test"
 PROMPT_TYPE="tora"
 NUM_TEST_SAMPLE=-1

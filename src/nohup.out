@@ -1,0 +1,27 @@
++ MODEL_STEPS=("xDAN-R2-Thinking-0401")
++ MAX_TOKENS=(1024 2048 4096)
++ DATA_NAME=math500
++ SPLIT=test
++ PROMPT_TYPE=tora
++ NUM_TEST_SAMPLE=-1
++ OUTPUT_FILE=math500_test.csv
++ '[' '!' -f math500_test.csv ']'
++ for MODEL_STEP in "${MODEL_STEPS[@]}"
++ MODEL_NAME_OR_PATH=/data/vayu/train/models/xDAN-R2-Thinking-0401
++ for MAX_TOKENS_VALUE in "${MAX_TOKENS[@]}"
++ echo 'Running model: xDAN-R2-Thinking-0401, max_tokens: 1024'
+Running model: xDAN-R2-Thinking-0401, max_tokens: 1024
+++ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+++ TOKENIZERS_PARALLELISM=false
+++ python -um infer.inference --model_name_or_path /data/vayu/train/models/xDAN-R2-Thinking-0401 --data_name math500 --tensor_parallel_size 8 --split test --max_tokens_per_call 1024 --prompt_type tora --use_train_prompt_format --num_test_sample -1 --seed 0 --temperature 0 --n_sampling 1 --top_p 1 --start 0 --end -1
+usage: inference.py [-h] [--data_name DATA_NAME] [--data_dir DATA_DIR]
+                    [--model_name_or_path MODEL_NAME_OR_PATH]
+                    [--output_dir OUTPUT_DIR] [--prompt_type PROMPT_TYPE]
+                    [--split SPLIT] [--num_test_sample NUM_TEST_SAMPLE]
+                    [--seed SEED] [--start START] [--end END]
+                    [--temperature TEMPERATURE] [--n_sampling N_SAMPLING]
+                    [--top_p TOP_P]
+                    [--max_tokens_per_call MAX_TOKENS_PER_CALL] [--shuffle]
+                    [--use_train_prompt_format]
+inference.py: error: unrecognized arguments: --tensor_parallel_size 8
++ OUTPUT='WARNING 04-08 15:19:07 ray_utils.py:44] Failed to import Ray with ModuleNotFoundError("No module named '\''ray'\''"). For distributed inference, please install Ray with `pip install ray`.'

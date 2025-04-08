@@ -2,10 +2,10 @@
 set -ex
 
 # 模型检查点列表
-MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
-# MODEL_STEPS=("global_step_160/actor_hf")
+# MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
+MODEL_STEPS=("xDAN-R2-Thinking-0401")
 # max_tokens_per_call 选择
-MAX_TOKENS=(1024 2048 4096 8192 16384)
+MAX_TOKENS=(8192 16384)
 
 # 数据集配置
 DATA_NAME="math500"
@@ -22,13 +22,13 @@ if [ ! -f ${OUTPUT_FILE} ]; then
 fi
 # 运行实验
 for MODEL_STEP in "${MODEL_STEPS[@]}"; do
-    MODEL_NAME_OR_PATH="/data/vayu/train/models/ckpts/ToRL/rl.grpo_qwen.base_7b_torl_data_numcall1/${MODEL_STEP}"
-    
+    #MODEL_NAME_OR_PATH="/data/vayu/train/models/ckpts/ToRL/rl.grpo_qwen.base_7b_torl_data_numcall1/${MODEL_STEP}"
+    MODEL_NAME_OR_PATH="/data/vayu/train/models/${MODEL_STEP}"
     for MAX_TOKENS_VALUE in "${MAX_TOKENS[@]}"; do
         echo "Running model: ${MODEL_STEP}, max_tokens: ${MAX_TOKENS_VALUE}"
         
         # 运行推理
-        OUTPUT=$(CUDA_VISIBLE_DEVICES=0 TOKENIZERS_PARALLELISM=false \
+        OUTPUT=$(CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 TOKENIZERS_PARALLELISM=false \
         python -um infer.inference \
         --model_name_or_path ${MODEL_NAME_OR_PATH} \
         --data_name ${DATA_NAME} \

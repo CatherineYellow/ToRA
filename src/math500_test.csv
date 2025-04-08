@@ -19,3 +19,8 @@ global_step_540, 2048, 71.8
 global_step_540, 4096, 71.6
 global_step_540, 8192, 71.4
 global_step_540, 16384, 71.6
+xDAN-R2-Thinking-0401, 1024, 33.2
+xDAN-R2-Thinking-0401, 2048, 64.0
+xDAN-R2-Thinking-0401, 4096, 80.8
+xDAN-R2-Thinking-0401, 8192, 89.6
+xDAN-R2-Thinking-0401, 16384, 93.2

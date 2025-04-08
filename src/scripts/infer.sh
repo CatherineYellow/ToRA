@@ -2,8 +2,8 @@
 set -ex
 
 # 模型检查点列表
-#MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
-MODEL_STEPS=("global_step_160/actor_hf")
+MODEL_STEPS=("global_step_300" "global_step_400" "global_step_500" "global_step_540" )
+# MODEL_STEPS=("global_step_160/actor_hf")
 # max_tokens_per_call 选择
 MAX_TOKENS=(1024 2048 4096 8192 16384)
 
@@ -14,7 +14,8 @@ PROMPT_TYPE="tora"
 NUM_TEST_SAMPLE=-1
 
 # 输出 CSV 文件
-OUTPUT_FILE="aime2024_test.csv"
+# OUTPUT_FILE="aime2024_test.csv"
+OUTPUT_FILE=${DATA_NAME}_${SPLIT}.csv
 #echo "model, max_tokens, mean_score" > ${OUTPUT_FILE}  # 先写入表头
 if [ ! -f ${OUTPUT_FILE} ]; then
     echo "model, max_tokens, mean_score" > ${OUTPUT_FILE}  # 先写入表头
